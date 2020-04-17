@@ -6,6 +6,7 @@ const { isEqual } = require( 'lodash' );
 /**
  * WordPress dependencies
  */
+import { __experimentalBlock as Block } from '@wordpress/block-editor';
 import { useSelect } from '@wordpress/data';
 import { useEffect, useState } from '@wordpress/element';
 import { __ } from '@wordpress/i18n';
@@ -45,8 +46,8 @@ export default function TableOfContentsEdit( { className } ) {
 	}
 
 	return (
-		<div className={ className }>
+		<Block.div className={ className }>
 			<List>{ linearToNestedHeadingList( headings ) }</List>
-		</div>
+		</Block.div>
 	);
 }
